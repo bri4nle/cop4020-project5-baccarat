@@ -19,7 +19,6 @@ module.exports = {
         ];
 
         let deck = []
-        console.log("In getCard");
 
         // create a deck of cards
         for (let d = 0; d < 10; ++d) {
@@ -39,5 +38,9 @@ module.exports = {
             deck[j] = temp;
         }
         return deck;
+    },
+
+    getRandomIndex: function (max) {
+        return Math.floor(Math.random() * max);
     }
 };
