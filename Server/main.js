@@ -1,6 +1,9 @@
 const express = require('express');
+let decks = require("./card")
 
 let app = express();
+let cards = decks.getDecks
+let index = 0;
 
 // set up handlebars view engine
 let handlebars = require('express-handlebars')
@@ -12,6 +15,12 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
 
+app.get('/api/card', (req, res) => {
+	res.send("hello")
+	// let cards = decks.getDecks
+	// console.log(cards[1])
+	console.log("returned")
+});
 
 app.get('/', function(req, res) {
 	res.render('home');
