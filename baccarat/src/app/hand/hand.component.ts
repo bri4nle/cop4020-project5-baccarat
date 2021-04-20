@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HandComponent implements OnInit {
 
+  name: string = "Player"
   constructor() { }
 
   ngOnInit(): void {
