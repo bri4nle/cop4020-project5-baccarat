@@ -1,6 +1,9 @@
 const express = require('express');
+let decks = require("./card")
 
 let app = express();
+let cards = decks.getDecks();
+let index = 0;
 
 // set up handlebars view engine
 let handlebars = require('express-handlebars')
@@ -12,6 +15,16 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
 
+app.get('/api/card', (req, res) => {
+	if (cards.length == 0)
+		cards = decks.getDecks();
+	let index = decks.getRandomIndex(cards.length);
+	let card = cards[index];
+	console.log("Index: ", index);
+	console.log("length of cards: ", cards.length);
+	cards.splice(index, 1);
+	res.send(card);
+});
 
 app.get('/', function(req, res) {
 	res.render('home');
