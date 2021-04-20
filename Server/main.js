@@ -17,6 +17,10 @@ app.get('/', function(req, res) {
 	res.render('home');
 });
 
+app.get('/card', function(req, res) {
+	res.json({value: 5, suit: 'Diamonds'})
+});
+
 // 404 catch-all handler (middleware)
 app.use(function(req, res, next){
 	res.status(404);
