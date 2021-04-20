@@ -13,8 +13,9 @@ export class PlayerBetCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  drawACard() {
-    let response = this.cardDeckAPI.drawOneCardFromNewDeck();
+  async drawACard() {
+    console.log("called function");
+    let response = await this.cardDeckAPI.drawOneCardFromNewDeck();
     console.log(response);
   }
 }

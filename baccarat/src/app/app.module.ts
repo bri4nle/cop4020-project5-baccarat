@@ -8,6 +8,7 @@ import { TieBetCardComponent } from './tie-bet-card/tie-bet-card.component';
 import { BankerBetCardComponent } from './banker-bet-card/banker-bet-card.component';
 import { PlayerBetCardComponent } from './player-bet-card/player-bet-card.component';
 import { HandComponent } from './hand/hand.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HandComponent } from './hand/hand.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

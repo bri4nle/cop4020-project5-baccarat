@@ -8,8 +8,11 @@ export class CardDeckAPIService {
 
   constructor(private http: HttpClient) { }
 
-  drawOneCardFromNewDeck() {
-    let response = this.http.get("https://deckofcardsapi.com/api/deck/new/draw/?count=1", { responseType: 'json' });
+  
+  async drawOneCardFromNewDeck() {
+    console.log("calling API");
+    let response = await this.http.get("https://deckofcardsapi.com/api/deck/new/draw/?count=52", { responseType: 'json' }).toPromise();
     console.log(response);
+    
   }
 }
