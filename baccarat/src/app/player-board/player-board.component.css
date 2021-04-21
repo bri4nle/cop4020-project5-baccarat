@@ -1,0 +1,9 @@
+.card {
+    background-color:#18582b;
+    color: white;
+    border: white;
+}
+
+.card-subtitle {
+    color: white !important;
+}
