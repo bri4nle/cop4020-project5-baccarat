@@ -1,7 +1,8 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
+        <h5 class="card-title">{{boardName}}</h5>
     </div>
     <div>
+        <img *ngFor="let card of hand" src="{{card.image}}">
     </div>
 </div>

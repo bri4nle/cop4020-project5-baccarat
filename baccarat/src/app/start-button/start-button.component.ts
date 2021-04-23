@@ -12,4 +12,7 @@ export class StartButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  startGame(target: EventTarget) {
+    (target as HTMLButtonElement).innerHTML = "New Round";
+  }
 }

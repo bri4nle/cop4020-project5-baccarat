@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EngineService } from '../engine.service';
+import { Hand } from '../hand.service';
 
 @Component({
   selector: 'app-game-board',
@@ -7,6 +8,7 @@ import { EngineService } from '../engine.service';
   styleUrls: ['./game-board.component.css']
 })
 export class GameBoardComponent implements OnInit {
+  hand: Hand
 
   constructor(public engine:EngineService) { }
 
@@ -17,8 +19,8 @@ export class GameBoardComponent implements OnInit {
     console.log("about to set up the game");
     await this.engine.setupGame();
     console.log("about to deal this game");
-    let response = await this.engine.dealGame();
-    console.log(response);
+    this.hand = await this.engine.dealGame();
+    console.log(this.hand);
   }
 
 }

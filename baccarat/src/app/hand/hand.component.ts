@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hand',
@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hand.component.css']
 })
 export class HandComponent implements OnInit {
-
-  name: string = "Player"
+  @Input() hand;
+  @Input() boardName;
+  
   constructor() { }
 
   ngOnInit(): void {
