@@ -47,10 +47,8 @@ export class CardDeckAPIService {
 
   // Put the cards got back from API in to deck
   dealACard() {
-    console.log(this.deck);
-    let card = this.deck[0];
-    this.deck.pop();
-    return card;
+    // console.log(this.deck);
+    return this.deck.pop();
   }
   
   // Get a card from the deck and take out that card from deck
