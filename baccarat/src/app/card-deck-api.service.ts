@@ -11,12 +11,16 @@ export class CardDeckAPIService {
   constructor(private http: HttpClient) { }
 
   
-  async drawOneCardFromNewDeck() {
-    console.log("calling API");
-    let response = await this.http.get("https://deckofcardsapi.com/api/deck/new/draw/?count=52", { responseType: 'json' }).toPromise();
-    // console.log(response['cards']);
+  // Get 8 decks from the api
+  async getDecks() {
+    let response = [];
+    for(let i = 0; i < 8; ++i) {
+      response.push(await this.http.get("https://deckofcardsapi.com/api/deck/new/draw/?count=52", { responseType: 'json' }).toPromise());
+    }
     this.deck = response['cards'];
+  }
 
+  getProbDeck() {
     const probDeck = this.deck.map(card => card.value)
     .map(function(card) {
       if (card == "ACE") {
@@ -32,12 +36,14 @@ export class CardDeckAPIService {
     .map(card => parseInt(card))
 
     console.log(probDeck);
+    return probDeck;
   }
 
   // Put the cards got back from API in to deck
   dealACard() {
-
-    return this.deck[0];
+    let card = this.deck[0];
+    this.deck.pop();
+    return card;
   }
   
   // Get a card from the deck and take out that card from deck

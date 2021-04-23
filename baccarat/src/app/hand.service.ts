@@ -12,4 +12,9 @@ export class Hand {
         this.playerCards = pCards;
         this.bankerCards = bCards;
     }
+
+    clearHand() {
+      this.playerCards = [];
+      this.bankerCards = [];
+    }
 }

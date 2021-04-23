@@ -13,6 +13,7 @@ export class EngineService {
               public resultsEngine: ResultsEngine) { }
 
   dealGame() {
+    this.hand.clearHand();
     let pCard1 = this.cardDeck.dealACard();
     let pCard2 = this.cardDeck.dealACard();
     let bCard1 = this.cardDeck.dealACard();
