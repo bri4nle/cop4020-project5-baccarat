@@ -11,6 +11,8 @@ import { HandComponent } from './hand/hand.component';
 import { HttpClientModule} from '@angular/common/http';
 import { StartButtonComponent } from './start-button/start-button.component';
 import { GameBoardComponent } from './game-board/game-board.component';
+import { ScoreBoardComponent } from './score-board/score-board.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { GameBoardComponent } from './game-board/game-board.component';
     PlayerBetCardComponent,
     HandComponent,
     StartButtonComponent,
-    GameBoardComponent
+    GameBoardComponent,
+    ScoreBoardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

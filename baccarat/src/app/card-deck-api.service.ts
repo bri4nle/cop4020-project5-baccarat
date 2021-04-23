@@ -48,6 +48,7 @@ export class CardDeckAPIService {
   // Put the cards got back from API in to deck
   dealACard() {
     // console.log(this.deck);
+    console.log("Deck size = " + this.deck.length);
     return this.deck.pop();
   }
   
