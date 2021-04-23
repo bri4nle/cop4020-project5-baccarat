@@ -119,7 +119,8 @@ export class ResultsEngine {
      */
     calculateHandValue(cards: any[]) {
         let cardsValue = cards.reduce((handValue, card) => {
-            return ResultsEngine.valueForCard(card) + handValue;
+            console.log(card);
+            return ResultsEngine.valueForCard(card.value) + handValue;
         }, 0);
 
         return cardsValue % 10;

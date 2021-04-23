@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ResultsEngine } from '../results-engine.service';
 
 @Component({
   selector: 'app-hand',
@@ -8,8 +9,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HandComponent implements OnInit {
   @Input() hand;
   @Input() boardName;
-  
-  constructor() { }
+  @Input() value;
+
+
+  constructor(private results: ResultsEngine) { }
 
   ngOnInit(): void {
   }

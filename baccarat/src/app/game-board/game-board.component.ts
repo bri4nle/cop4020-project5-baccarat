@@ -9,6 +9,8 @@ import { Hand } from '../hand.service';
 })
 export class GameBoardComponent implements OnInit {
   hand: Hand
+  playerValue: number;
+  bankerValue: number;
 
   constructor(public engine:EngineService) { }
 
@@ -21,6 +23,10 @@ export class GameBoardComponent implements OnInit {
     console.log("about to deal this game");
     this.hand = await this.engine.dealGame();
     console.log(this.hand);
+    this.playerValue =this.engine.resultsEngine.calculateHandValue(this.hand.playerCards);
+    console.log("Player Value: " + this.playerValue);
+    this.bankerValue =this.engine.resultsEngine.calculateHandValue(this.hand.bankerCards);
+    console.log("Banker Value: " + this.bankerValue);
   }
 
 }
