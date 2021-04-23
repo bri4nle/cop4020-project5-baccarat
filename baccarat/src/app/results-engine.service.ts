@@ -132,6 +132,7 @@ export class ResultsEngine {
      */
     static valueForCard(value = '0') {
         switch (value) {
+            case 'ACE': return 1;
             case '1': return 1;
             case '2': return 2;
             case '3': return 3;
@@ -143,9 +144,9 @@ export class ResultsEngine {
             case '9': return 9;
             case '10':
             case '0':
-            case 'Jack':
-            case 'Queen':
-            case 'King':
+            case 'JACK':
+            case 'QUEEN':
+            case 'KING':
                 return 0;
             default: return 0;
         }
