@@ -8,6 +8,9 @@ import { TieBetCardComponent } from './tie-bet-card/tie-bet-card.component';
 import { BankerBetCardComponent } from './banker-bet-card/banker-bet-card.component';
 import { PlayerBetCardComponent } from './player-bet-card/player-bet-card.component';
 import { HandComponent } from './hand/hand.component';
+import { HttpClientModule} from '@angular/common/http';
+import { StartButtonComponent } from './start-button/start-button.component';
+import { GameBoardComponent } from './game-board/game-board.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { HandComponent } from './hand/hand.component';
     TieBetCardComponent,
     BankerBetCardComponent,
     PlayerBetCardComponent,
-    HandComponent
+    HandComponent,
+    StartButtonComponent,
+    GameBoardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

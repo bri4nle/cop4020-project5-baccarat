@@ -1,5 +1,11 @@
 * {
-    padding: 3em;
+    padding: 1.5em;
     background-color: #18582b;
     color: white;
+}
+
+img {
+    max-width: 30%;
+    height: auto;
+    padding: .25em;
 }
