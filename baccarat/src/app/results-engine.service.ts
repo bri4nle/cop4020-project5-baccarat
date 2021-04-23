@@ -129,7 +129,7 @@ export class ResultsEngine {
      * @param {Card} card The card to calculate a baccarat hand value for
      * @return {Number} The baccarat hand value
      */
-    static valueForCard({suit, value = '0'}) {
+    static valueForCard(value = '0') {
         switch (value) {
             case '1': return 1;
             case '2': return 2;

@@ -12,6 +12,12 @@ export class EngineService {
               public hand: Hand,
               public resultsEngine: ResultsEngine) { }
 
+  async setupGame() {
+    let response = await this.cardDeck.getDecks();
+    console.log("returned from API, currently about to leave setupGame(). Here's what I got");
+    console.log(response);
+  }
+
   dealGame() {
     this.hand.clearHand();
     let pCard1 = this.cardDeck.dealACard();

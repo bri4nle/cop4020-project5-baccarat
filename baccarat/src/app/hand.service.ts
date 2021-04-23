@@ -8,9 +8,9 @@ export class Hand {
     playerCards: any[] = [];
     bankerCards: any[] = [];
 
-    constructor(public pCards: any[], public bCards: any[]) { 
-        this.playerCards = pCards;
-        this.bankerCards = bCards;
+    constructor() { 
+        // this.playerCards = pCards;
+        // this.bankerCards = bCards;
     }
 
     clearHand() {

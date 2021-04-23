@@ -15,9 +15,15 @@ export class CardDeckAPIService {
   async getDecks() {
     let response = [];
     for(let i = 0; i < 8; ++i) {
-      response.push(await this.http.get("https://deckofcardsapi.com/api/deck/new/draw/?count=52", { responseType: 'json' }).toPromise());
+      response = (await this.http.get("https://deckofcardsapi.com/api/deck/new/draw/?count=52", { responseType: 'json' }).toPromise())['cards'];
+      // this.deck.push(response);
+      for (let card of response) {
+        this.deck.push(card);
+      }
     }
-    this.deck = response['cards'];
+
+    console.log(this.deck);
+    return this.deck;
   }
 
   getProbDeck() {
@@ -41,6 +47,7 @@ export class CardDeckAPIService {
 
   // Put the cards got back from API in to deck
   dealACard() {
+    console.log(this.deck);
     let card = this.deck[0];
     this.deck.pop();
     return card;

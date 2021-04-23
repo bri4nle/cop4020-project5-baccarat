@@ -15,7 +15,7 @@ export class PlayerBetCardComponent implements OnInit {
 
   async drawACard() {
     console.log("called function");
-    let response = await this.cardDeckAPI.drawOneCardFromNewDeck();
+    let response = await this.cardDeckAPI.getDecks();
     console.log(response);
     console.log("end drawACard");
   }

@@ -9,6 +9,8 @@ import { BankerBetCardComponent } from './banker-bet-card/banker-bet-card.compon
 import { PlayerBetCardComponent } from './player-bet-card/player-bet-card.component';
 import { HandComponent } from './hand/hand.component';
 import { HttpClientModule} from '@angular/common/http';
+import { StartButtonComponent } from './start-button/start-button.component';
+import { GameBoardComponent } from './game-board/game-board.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HttpClientModule} from '@angular/common/http';
     TieBetCardComponent,
     BankerBetCardComponent,
     PlayerBetCardComponent,
-    HandComponent
+    HandComponent,
+    StartButtonComponent,
+    GameBoardComponent
   ],
   imports: [
     BrowserModule,
