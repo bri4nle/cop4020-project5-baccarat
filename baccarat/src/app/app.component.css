@@ -1,3 +1,7 @@
 * {
   background-color: #327533;
 }
+
+.game-board-row {
+  justify-content: center;
+}
