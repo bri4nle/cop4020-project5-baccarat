@@ -12,7 +12,7 @@ export class CardDeckAPIService {
 
   
   // Get 8 decks from the api
-  async getDecks() {
+  async getDecksFromAPI() {
     let response = [];
     for(let i = 0; i < 8; ++i) {
       response = (await this.http.get("https://deckofcardsapi.com/api/deck/new/draw/?count=52", { responseType: 'json' }).toPromise())['cards'];
@@ -22,8 +22,8 @@ export class CardDeckAPIService {
       }
     }
 
-    console.log(this.deck);
-    return this.deck;
+    // console.log(this.deck);
+    // return this.deck;
   }
 
   getProbDeck() {
@@ -41,7 +41,7 @@ export class CardDeckAPIService {
     })
     .map(card => parseInt(card))
 
-    console.log(probDeck);
+    // console.log(probDeck);
     return probDeck;
   }
 
