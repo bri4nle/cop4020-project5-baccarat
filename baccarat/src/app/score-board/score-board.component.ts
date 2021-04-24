@@ -9,6 +9,10 @@ export class ScoreBoardComponent implements OnInit {
 @Input() playerWinCount;
 @Input() bankerWinCount;
 @Input() tieCount;
+@Input() tieProb;
+@Input() playerWinPct;
+@Input() bankerWinPct;
+@Input() tiePct;
 
   constructor() { }
 

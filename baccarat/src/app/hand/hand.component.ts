@@ -10,6 +10,7 @@ export class HandComponent implements OnInit {
   @Input() hand;
   @Input() boardName;
   @Input() value;
+  @Input() prob;
 
 
   constructor(private results: ResultsEngine) { }

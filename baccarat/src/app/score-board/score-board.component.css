@@ -2,3 +2,8 @@
   background-color: #18582b;
   color: white;
 }
+
+h5 {
+  justify-content: center;
+  align-items: center;
+}
