@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankerBetCardComponent implements OnInit {
 
+  isChosen = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setBankerBet() {
+    this.isChosen = true;
+  }
+
+  isPicked() {
+    return this.isChosen;
   }
 
 }

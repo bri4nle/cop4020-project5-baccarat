@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CardDeckAPIService } from '../card-deck-api.service';
 
 @Component({
   selector: 'app-player-bet-card',
@@ -8,15 +7,18 @@ import { CardDeckAPIService } from '../card-deck-api.service';
 })
 export class PlayerBetCardComponent implements OnInit {
 
-  constructor(public cardDeckAPI: CardDeckAPIService) { }
+  isChosen = false;
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  // async drawACard() {
-  //   console.log("called function");
-  //   let response = await this.cardDeckAPI.getDecks();
-  //   console.log(response);
-  //   console.log("end drawACard");
-  // }
+  setPlayerBet() {
+    this.isChosen = true;
+  }
+
+  isPicked() {
+    return this.isChosen;
+  }
 }

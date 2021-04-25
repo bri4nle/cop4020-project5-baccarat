@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+import { BankerBetCardComponent } from './banker-bet-card/banker-bet-card.component';
 import { CardDeckAPIService } from './card-deck-api.service';
 import { Hand } from './hand.service';
+import { PlayerBetCardComponent } from './player-bet-card/player-bet-card.component';
 import { ProbabilityService } from './probability.service';
 import { ResultsEngine } from './results-engine.service';
+import { TieBetCardComponent } from './tie-bet-card/tie-bet-card.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +16,7 @@ export class EngineService {
   playerProb: number;
   bankerProb: number;
   tieProb: number;
+  betStatus: string
 
   constructor(public cardDeck: CardDeckAPIService, 
               public hand: Hand,
@@ -31,18 +35,13 @@ export class EngineService {
     return this.cardDeck.getProbDeck();
   }
 
-  // calcProb(playerVal: number, bankerVal: number) {
-  //   let deckToCalcProb = this.getProbDeck();
+  setBet(bet: string) {
+    this.betStatus = bet;
+  }
 
-  //   // this.playerProb = this.probService.getPlayerProb(deckToCalcProb, playerVal, bankerVal);
-  //   // this.bankerProb = this.probService.getBankerProb(deckToCalcProb, playerVal, bankerVal);
-    
-  //   [this.playerProb, this.bankerProb] = this.probService.getProbs(deckToCalcProb, playerVal, bankerVal);
-
-  //   console.log("Player's prob = " + this.playerProb);
-  //   console.log("Banker's prob = " + this.bankerProb);
-  //   // return [playerProb, bankerProb];
-  // }
+  getBet() {
+    return this.betStatus;
+  }
 
   dealGame() {
     this.hand.clearHand();
@@ -66,9 +65,9 @@ export class EngineService {
 
     // Natural (Dealer or Player drew an 8 or 9) - neither side draws, game over.
     if (bankerCardsValue > 7 || playerCardsValue > 7) {
-      this.bankerProb = 50.68
-      this.playerProb = 44.62;
-      this.tieProb = 9.55;
+      this.bankerProb = 45.80;
+      this.playerProb = 44.60;
+      this.tieProb = 9.60;
       console.log("Player's prob = " + this.playerProb);
       console.log("Banker's prob = " + this.bankerProb);
       console.log("Tie prob = " + this.tieProb);
@@ -78,9 +77,9 @@ export class EngineService {
     else if (playerCardsValue > 5) {
       // Player stood so dealer draws with [0-5] and stands with 6 or 7
       if (bankerStands) {
-        this.bankerProb = 50.68
-        this.playerProb = 44.62;
-        this.tieProb = 9.55;
+        this.bankerProb = 45.80;
+        this.playerProb = 44.60;
+        this.tieProb = 9.60;
         console.log("Player's prob = " + this.playerProb);
         console.log("Banker's prob = " + this.bankerProb);
         console.log("Tie prob = " + this.tieProb);

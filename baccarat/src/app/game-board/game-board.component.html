@@ -3,19 +3,32 @@
 </div>
 <div class="row start-row">
     <app-score-board [playerWinCount]="playerWinCount" 
-                    [bankerWinCount]="bankerWinCount" 
-                    [tieCount]="tieCount" 
-                    [tieProb]="tieProb"
-                    [playerWinPct]="playerWinPercentage"
-                    [bankerWinPct]="bankerWinPercentage"
-                    [tiePct]="tiePercentage">
+                     [bankerWinCount]="bankerWinCount" 
+                     [tieCount]="tieCount" 
+                     [tieProb]="tieProb"
+                     [playerWinPct]="playerWinPercentage"
+                     [bankerWinPct]="bankerWinPercentage"
+                     [tiePct]="tiePercentage">
     </app-score-board>
 </div>
 <div class="row hand-row">
     <div class="col-md">
-        <app-hand [hand]="hand.playerCards" [boardName]="'Player'" [value]="playerValue" [prob]="playerProb"></app-hand>
+        <app-hand [hand]="hand.playerCards" 
+                  [boardName]="'Player'" 
+                  [value]="playerValue" 
+                  [prob]="playerProb">
+        </app-hand>
     </div>
     <div class="col-md">
-        <app-hand [hand]="hand.bankerCards" [boardName]="'Banker'" [value]="bankerValue" [prob]="bankerProb"></app-hand>
+        <app-hand [hand]="hand.bankerCards" 
+                  [boardName]="'Banker'" 
+                  [value]="bankerValue" 
+                  [prob]="bankerProb">
+        </app-hand>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md">
+        <app-player-board></app-player-board>
     </div>
 </div>
